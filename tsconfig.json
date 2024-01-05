@@ -1,0 +1,5 @@
+{
+  "root": true,
+  "extends": "@fullstacksjs/tsconfig/esm",
+  "exclude": ["node_modules"]
+}
