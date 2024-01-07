@@ -9,6 +9,7 @@ Thumbs.db
 
 # environment
 .env.local
+.env
 
 # npm
 .npm

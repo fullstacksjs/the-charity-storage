@@ -10,17 +10,26 @@
   "author": "",
   "license": "ISC",
   "volta": {
-    "node": "18.18.2",
+    "node": "20.10.0",
     "pnpm": "8.14.0"
   },
   "devDependencies": {
     "@fullstacksjs/eslint-config": "10.8.0",
     "@fullstacksjs/tsconfig": "1.1.0",
+    "@types/node": "20.10.6",
     "cspell": "8.3.2",
     "eslint": "8.56.0",
     "husky": "8.0.3",
     "lint-staged": "15.2.0",
     "prettier": "3.1.1",
     "typescript": "5.3.3"
+  },
+  "dependencies": {
+    "@fullstacksjs/config": "1.1.0-next.13",
+    "aws-sdk": "2.1531.0",
+    "h3": "1.10.0",
+    "listhen": "1.5.5",
+    "sharp": "0.33.1",
+    "zod": "3.22.4"
   }
 }

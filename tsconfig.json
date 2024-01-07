@@ -1,5 +1,6 @@
 {
   "root": true,
   "extends": "@fullstacksjs/tsconfig/esm",
+  "include": ["src/", "env.d.ts"],
   "exclude": ["node_modules"]
 }
