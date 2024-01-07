@@ -2,9 +2,7 @@ import { toNodeListener } from 'h3';
 import { listen } from 'listhen';
 
 import { app } from './app';
-import { config, parseConfig } from './config';
-
-parseConfig();
+import { config } from './config';
 
 const listener = toNodeListener(app);
 

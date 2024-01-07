@@ -1,8 +1,9 @@
-import { createApp, eventHandler } from 'h3';
+import { createApp, createRouter, eventHandler } from 'h3';
+
+import { getFile } from './handlers/getFile';
 
 export const app = createApp();
 
-app.use(
-  '/file/:id',
-  eventHandler(() => 'Hello world!'),
-);
+const router = createRouter().get('/:id', eventHandler(getFile));
+
+app.use(router);
