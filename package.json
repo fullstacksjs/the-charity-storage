@@ -2,13 +2,14 @@
   "name": "the-charity-storage",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main.ts",
   "scripts": {
+    "start": "bun .",
     "prepare": "./scripts/prepare"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "volta": {
     "node": "20.10.0",
     "pnpm": "8.14.0"
