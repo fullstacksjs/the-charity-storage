@@ -10,10 +10,6 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "volta": {
-    "node": "20.10.0",
-    "pnpm": "8.14.0"
-  },
   "devDependencies": {
     "@fullstacksjs/eslint-config": "10.8.0",
     "@fullstacksjs/tsconfig": "1.1.0",
