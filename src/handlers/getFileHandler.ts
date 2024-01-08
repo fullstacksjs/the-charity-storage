@@ -33,6 +33,8 @@ export const querySchema = z.object({
 
 export async function getFileHandler(event: H3Event) {
   const key = getKey(event.path);
+  if (!key)
+    throw createError({ status: 400, statusMessage: 'No key provided' });
 
   const headObject = await s3.headObject(getParam(key)).catch((e) => {
     console.error(e);

@@ -5,7 +5,6 @@ import { getFileHandler } from './handlers/getFileHandler';
 import { uploadFileHandler } from './handlers/uploadFileHandler';
 
 export const app = createApp();
-
 const router = createRouter()
   .get(
     '/',
