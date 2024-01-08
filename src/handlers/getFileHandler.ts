@@ -1,12 +1,6 @@
 import { createHash } from 'crypto';
 import type { H3Event } from 'h3';
-import {
-  createError,
-  getQuery,
-  sendStream,
-  setHeader,
-  setResponseHeader,
-} from 'h3';
+import { createError, getQuery, setHeader, setResponseHeader } from 'h3';
 import sharp from 'sharp';
 import z from 'zod';
 
@@ -37,7 +31,7 @@ export const querySchema = z.object({
   q: z.coerce.number().int().min(0).max(100).default(100),
 });
 
-export async function getFile(event: H3Event) {
+export async function getFileHandler(event: H3Event) {
   const key = getKey(event.path);
 
   const headObject = await s3.headObject(getParam(key)).catch((e) => {
