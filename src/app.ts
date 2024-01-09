@@ -1,4 +1,4 @@
-import { createApp, createRouter, eventHandler } from 'h3';
+import { createApp, createRouter, eventHandler, handleCors } from 'h3';
 
 import { deleteFileHandler } from './handlers/deleteFileHandler';
 import { getFileHandler } from './handlers/getFileHandler';
@@ -13,5 +13,9 @@ const router = createRouter()
   .get('/:id', eventHandler(getFileHandler))
   .post('/', eventHandler(uploadFileHandler))
   .delete('/:id', eventHandler(deleteFileHandler));
-
+app.use(
+  eventHandler((event) =>
+    handleCors(event, { origin: '*', credentials: true }),
+  ),
+);
 app.use(router);
