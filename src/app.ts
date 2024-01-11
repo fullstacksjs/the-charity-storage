@@ -14,8 +14,12 @@ const router = createRouter()
   .post('/', eventHandler(uploadFileHandler))
   .delete('/:id', eventHandler(deleteFileHandler));
 app.use(
-  eventHandler((event) =>
-    handleCors(event, { origin: '*', credentials: true }),
-  ),
+  eventHandler((event) => {
+    handleCors(event, {
+      origin: '*',
+      credentials: true,
+      methods: '*',
+    });
+  }),
 );
 app.use(router);
