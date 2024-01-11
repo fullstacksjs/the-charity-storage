@@ -13,7 +13,9 @@ export async function uploadFileHandler(event: H3Event) {
 
   const multipart = await readMultipartFormData(event);
   const resource = multipart?.find((data) => data.name === 'file');
-  const ext = resource?.filename ? path.parse(resource.filename).ext : '';
+  const ext = resource?.filename
+    ? path.parse(resource.filename).ext.slice(1)
+    : '';
 
   if (!resource) throw createError('No Resource');
 
