@@ -17,6 +17,8 @@ export async function uploadFileHandler(event: H3Event) {
     ? path.parse(resource.filename).ext.slice(1)
     : '';
 
+  if (ext === '')
+    throw createError({ status: 400, message: 'Missing Extension' });
   if (!resource) throw createError('No Resource');
 
   try {
@@ -25,6 +27,8 @@ export async function uploadFileHandler(event: H3Event) {
       Body: Readable.from(resource.data),
       ContentType: resource.type,
     }).done();
+    console.log(resource.filename, { ext }, data);
+
     return { status: 201, ...data };
   } catch (err) {
     console.error(err);
